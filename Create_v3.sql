@@ -70,7 +70,7 @@ CREATE TABLE GESUCH(
 	Erfasst_von        VARCHAR2(50)  NOT NULL,
 	Erfasst_am         TIMESTAMP(0)  NOT NULL, 
 	
-	constraint erfasst_SK foreign key(Erfasst_von) REFERENCES Mitarbeiter(VollName)
+	constraint erfasstGesuch_SK foreign key(Erfasst_von) REFERENCES Mitarbeiter(VollName)
 	  --SK auf PK zum mitarbeiter (PersonalNr)
 );
 
@@ -102,7 +102,7 @@ CREATE TABLE Angebot(
 	Erfasst_von        VARCHAR2(50)  NOT NULL,
 	Erfasst_am         TIMESTAMP(0)  NOT NULL,
 	
-	constraint erfasst_SK foreign key(Erfasst_von) REFERENCES Mitarbeiter(VollName)
+	constraint erfasstAngebot_SK foreign key(Erfasst_von) REFERENCES Mitarbeiter(VollName)
 	--SK auf PK zum mitarbeiter (PersonalNr)
 );
 
