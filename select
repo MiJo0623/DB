@@ -1,0 +1,10 @@
+
+--SELECT * FROM angebot
+
+--SELECT * FROM angebot WHERE ort_start='Mannheim' AND (ort_ziel='Koeln' OR ort_ueber='Koeln') ;
+--SELECT * from angebot WHERE erfasst_von= (SELECT PersonalNr FROM mitarbeiter WHERE name='Mueller');
+--SELECT Ort_Start,ort_ueber,ort_ziel FROM angebot WHERE ort_start='Mannheim' AND (ort_ziel='Koeln' OR ort_ueber='Koeln') ;
+--SELECT * FROM angebot WHERE  Abfahrt<TO_TIMESTAMP( '1-6-15', 'DD-MM-YY') OR Fruehste_Startzeit<TO_TIMESTAMP( '1-6-15', 'DD-MM-YY')
+SELECT * FROM angebot.Fruehste_Startzeit,gesuch.Fruehste_Startzeit WHERE angebot.ort_start=gesuch.ort_start AND  gesuch.ort_start='Mannheim'
+--SELECT * FROM angebot,gesuch,Beziehung_Vermittlung WHERE angebot.ort_start=gesuch.ort_start AND  gesuch.ort_start='Mannheim' AND Beziehung_Vermittlung.Fahrt_duerchgefuehrt=1
+
